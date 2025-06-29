@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="container">
+    <h1>Welcome to My Blog</h1>
+    <p class="lead">
+      I'm a software engineer passionate about technology and travel. 
+      Here I share insights on coding, system design, and adventures around the world.
+    </p>
+  </div>
+</section>
+
+<section class="recent-posts">
+  <div class="container">
+    <div class="content">
+      <h2>Recent Posts</h2>
+      
+      {% if site.posts.size > 0 %}
+        <div class="posts-grid">
+          {% for post in site.posts limit:6 %}
+            <article class="post-card">
+              <div class="post-meta">
+                <span class="category {{ post.category }}">{{ post.category | upcase }}</span>
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+              </div>
+              
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+              
+              <div class="excerpt">
+                {{ post.excerpt | strip_html | truncatewords: 25 }}
+              </div>
+              
+              <div class="read-time">
+                {% if post.read_time %}
+                  {{ post.read_time }} min read
+                {% else %}
+                  {{ post.content | reading_time }} min read
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="{{ '/blog/' | relative_url }}" class="btn-primary">View All Posts</a>
+        </div>
+      {% else %}
+        <p>No posts yet. Stay tuned!</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+.btn-primary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  color: white;
+  text-decoration: none;
+}
+</style>

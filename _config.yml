@@ -1,0 +1,89 @@
+# Site settings
+title: "Tech & Travel Blog"
+email: "your-email@example.com"
+description: >-
+  A minimal tech blog exploring code, travel, and everything in between.
+  Sharing insights on software development and travel adventures.
+baseurl: ""
+url: "https://yourusername.github.io"
+github_username: yourusername
+linkedin_username: yourlinkedin
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:title/
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# SEO
+author:
+  name: "Your Name"
+  email: "your-email@example.com"
+  uri: "https://yourusername.github.io"
+
+# Social
+social:
+  name: "Your Name"
+  links:
+    - "https://github.com/yourusername"
+    - "https://linkedin.com/in/yourlinkedin"
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+      show_excerpts: true
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - .github/
+
+# Categories and tags
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
