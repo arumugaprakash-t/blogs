@@ -4,9 +4,9 @@ email: "your-email@example.com"
 description: >-
   A minimal tech blog exploring code, travel, and everything in between.
   Sharing insights on software development and travel adventures.
-baseurl: ""
-url: "https://yourusername.github.io"
-github_username: yourusername
+baseurl: "/blogs"
+url: "https://arumugaprakash-t.github.io"
+github_username: arumugaprakash-t
 linkedin_username: yourlinkedin
 
 # Build settings
