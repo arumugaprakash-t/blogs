@@ -7,7 +7,7 @@ description: >-
 baseurl: "/blogs"
 url: "https://arumugaprakash-t.github.io"
 github_username: arumugaprakash-t
-linkedin_username: yourlinkedin
+linkedin_username: arumugaprakash
 
 # Build settings
 markdown: kramdown
